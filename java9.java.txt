@@ -24,8 +24,6 @@ public class PrimeRange {
                     break;
                 }
             }
-
-            // ✔ Now this is OUTSIDE the inner loop!
             if (count == 0) {
                 System.out.print(num + " ");
             }
@@ -34,3 +32,4 @@ public class PrimeRange {
         sc.close();
     }
 }
+
