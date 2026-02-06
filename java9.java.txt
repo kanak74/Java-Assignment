@@ -1,0 +1,36 @@
+import java.util.Scanner;
+
+public class PrimeRange {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter starting number: ");
+        int start = sc.nextInt();
+        System.out.print("Enter ending number: ");
+        int end = sc.nextInt();
+
+        System.out.println("Prime numbers between " + start + " and " + end + " are:");
+
+        for (int num = start; num <= end; num++) {
+
+            if (num < 2) {
+                continue;
+            }
+
+            int count = 0;
+
+            for (int i = 2; i <= num / 2; i++) {
+                if (num % i == 0) {
+                    count++;
+                    break;
+                }
+            }
+
+            // ✔ Now this is OUTSIDE the inner loop!
+            if (count == 0) {
+                System.out.print(num + " ");
+            }
+        }
+
+        sc.close();
+    }
+}
